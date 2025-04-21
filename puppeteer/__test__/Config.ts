@@ -1,8 +1,8 @@
 // Config.ts
 import dotenv from "dotenv";
-import path from 'path';
+import path from "path";
 
-const envPath = path.resolve(__dirname, '../../.env');
+const envPath = path.resolve(__dirname, "../../.env");
 dotenv.config({ path: envPath });
 
 interface BrowserConfig {
@@ -19,26 +19,18 @@ interface Config {
   browserConfig: BrowserConfig;
 }
 
-if (!process.env.ENV) {
-  throw new Error("ENV is not defined in the environment variables");
-}
-
-const env = process.env.ENV;
-const baseUrl =
-  env === "qa" ? process.env.BASE_URL_QA : process.env.BASE_URL_PRD;
-
-if (!baseUrl) {
-  throw new Error("BASE_URL is not defined in the environment variables");
-}
+const baseUrl = process.env.BASE_URL || "https://iniciativas.netcomplusve.com";
+const headless = process.env.BROWSER_HEADLESS === "0";
+const slowMo = Number(process.env.BROWSER_SLOWMO) || 0;
 
 const config: Config = {
   baseUrl,
   username: process.env.TESTUSER || "",
   password: process.env.TESTPASS || "",
   browserConfig: {
-    headless: process.env.BROWSER_HEADLESS === "true" || false,
+    headless,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    slowMo: process.env.BROWSER_SLOWMO === "true" || false ? 50 : undefined,
+    slowMo,
     defaultViewport: null,
   },
 };

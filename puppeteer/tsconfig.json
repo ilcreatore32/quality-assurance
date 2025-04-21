@@ -1,22 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES2020", // O una versión compatible con tu Node.js
-    "module": "CommonJS", // O "ESNext" si Babel se encarga de la transformación a CommonJS
+    "target": "ES2020",
+    "module": "CommonJS",
     "jsx": "react-jsx",
     "allowJs": true,
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "noEmit": true, // Babel se encargará de la emisión
-
-    // Ajusta estas según tus necesidades
+    "noEmit": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noPropertyAccessFromIndexSignature": false,
-
-    "moduleResolution": "node", // Importante para la resolución de módulos de Node.js que Jest usa
+    "moduleResolution": "node",
     "baseUrl": "./",
     "paths": {
       "*": ["./*"]
