@@ -1,45 +1,38 @@
 import BasePage from "./BasePage";
-import { Page } from 'puppeteer';
+import { Page } from "puppeteer";
+
+type Input = { selector: string; value: string };
 
 export default class LoginPage extends BasePage {
-    userInput: string;
-    passwordInput: string;
-    submitButton: string;
+  name: string;
+  loginBtn: string;
+  button: string;
 
-    constructor(page: Page) {
-        super(page);
-        this.userInput = '#username';
-        this.passwordInput = '#password';
-        this.submitButton = '/html/body/div[1]/main/div[2]/div/form/button';
+  constructor(page: Page) {
+    super(page);
+    this.name = "Login Page";
+    this.loginBtn = ".MuiButton-contained";
+    this.button = 'button[type="submit"]';
+  }
+
+  async fillOutForm(inputs: Input[]): Promise<void> {
+    for (const { selector, value } of inputs) {
+      await this.type(selector, value);
     }
+  }
 
-    async login(username: string, password: string): Promise<void> {
+  async getErrors(inputs: Input[]): Promise<void | Error> {
+    for (const { selector, value } of inputs) {
+      const helpText = `${selector}-helper-text`;
+      const error = await this.page.$(helpText);
 
-        // Login to the application
-        await this.type("#username", username);
-        await this.type("#password", password);
-        await this.click("button[type='submit']");
-
-        // Check if the login was successful
-        const text = await this.getText('#swal2-html-container')
-
-        if (!text?.includes(username)) {
-            throw new Error(`Error on login: ${text}`);
-        }
-
-        // Close Swal2 popup
-        await this.click('.swal2-confirm')
-
+      if (error) {
+        const text = await this.page.$eval(helpText, (e) => e.innerHTML);
+        return this.throwError(
+          this.name,
+          `The input: ${selector}, have an error: ${text}, for value ==> '${value}'`
+        );
+      }
     }
-
-    async checkMenu(): Promise<void>{
-
-        // Check if the main menu is displayed
-        const menu = await this.getCount('a.MuiBox-root');
-        if (menu < 1) {
-            throw new Error('Error on checkMenu: Menu not found');
-        }
-
-    }
-
+  }
 }
