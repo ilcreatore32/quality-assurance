@@ -13,10 +13,10 @@ This project demonstrates how to implement end-to-end (E2E) testing for web appl
 
 This project was created by applying the knowledge gained from the **Platzi** course on web automation. While not a direct project from the course, it leverages the principles and techniques taught to build a robust and maintainable testing suite. You can find more valuable learning resources at [Platzi](https://platzi.com/).
 
-### **Test Automation**
+Test Automation Courses
 
-- [**Puppeteer:**](https://platzi.com/cursos/puppeteer/).
-- [**Advanced Puppeteer:**](https://platzi.com/cursos/puppeteer-avanzado/).
+- [**Puppeteer.**](https://platzi.com/cursos/puppeteer/)
+- [**Advanced Puppeteer.**](https://platzi.com/cursos/puppeteer-avanzado/)
 
 ## Technologies Used
 
