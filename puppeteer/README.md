@@ -2,7 +2,7 @@
 
 <div align="center">
     <img
-        src="https://socialify.git.ci/ilcreatore32/quality-assurance/image?description=1&font=Source+Code+Pro&language=1&name=1&owner=1&pattern=Transparent&theme=Light"
+        src="https://socialify.git.ci/ilcreatore32/quality-assurance/image?description=1&font=Source+Code+Pro&language=1&name=1&owner=1&pattern=Transparent&theme=Auto"
         alt="project-image"
     />
 </div>
