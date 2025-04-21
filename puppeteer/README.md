@@ -1,11 +1,6 @@
 # QA with Puppeteer, Jest, TypeScript, and Bun
 
-<div align="center">
-    <img
-        src="https://socialify.git.ci/ilcreatore32/quality-assurance/image?description=1&font=Source+Code+Pro&language=1&name=1&owner=1&pattern=Transparent&theme=Auto"
-        alt="project-image"
-    />
-</div>
+![project-image](https://socialify.git.ci/ilcreatore32/quality-assurance/image?description=1&font=Source+Code+Pro&language=1&name=1&owner=1&pattern=Transparent&theme=Auto)
 
 This project demonstrates how to implement end-to-end (E2E) testing for web applications using a modern stack: **Puppeteer** for browser automation, **Jest** as the testing framework, **TypeScript** for enhanced code quality, and **Bun** as a fast JavaScript runtime and package manager.
 
