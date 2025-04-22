@@ -4,7 +4,7 @@ import puppeteer from "puppeteer";
 import type { Browser, Page } from "puppeteer";
 import { expect, describe, test, beforeAll, afterAll } from "@jest/globals";
 import DraftPage from "../../pages/DraftPage";
-import Config from "../Config";
+import Config from "../../Config";
 import path from "path";
 import fs from "fs";
 
